@@ -1,10 +1,38 @@
-3. Cree un Rmarkdown y cargue las librerías datasets y dplyr.
-4. Cree un objeto de R donde llame el conjunto de datos mtcars de la librería datasets.
+3. Cree un Rmarkdown y cargue las librerías
+```{r}
+library(datos)
+library(dplyr)
+```
+
+
+```{r}
 autos <- datasets::mtcars
-5. Filtre el objeto autos para obtener solo los automóviles que tienen más de 100 caballos de fuerza (hp).
+
+```
+
+5. Filtre el objeto autos para obtener solo los automóviles que tienen más de 100 caballos de fuerza
+
+(hp).
+```{r}
+autos_mas_100 <-  autos  |>
+  filter(hp > 100)
+```
 6. Ordene dichos automóviles de forma descendente según la potencia (hp).
+
+```{r}
+autos_ordenados <-  autos_mas_100 |>
+  arrange(desc(hp))
+```
 7. Seleccione únicamente las columnas mpg, hp y wt.
-8. Calcule el promedio de las millas por galón (mpg), la potencia (hp) y el peso (wt) para este conjunto
+```{r}
+autos_seleccionados <- autos_ordenados |>
+  select(mpg, hp, wt)
+```
+
+8. Calcule el promedio de las millas por galón (mpg),
+la potencia (hp) y el peso (wt) para este conjunto
 de datos.
 
+```{r}
 
+```
