@@ -34,5 +34,9 @@ la potencia (hp) y el peso (wt) para este conjunto
 de datos.
 
 ```{r}
+tabla_resumen <- autos_seleccionados|>
+  summarise(promedio_mpg = mean(mp),
+            promedio_hp = mean(hp),
+             promedio_wt = mean(wt))
 
 ```
