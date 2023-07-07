@@ -82,8 +82,20 @@ info_netflix_sin_año <- infor_netflix_sin_vacios|>
 f. Haga una inspección de las variables type y country para determinar si hay observaciones mal escritas o escritas de diferentes maneras. Si es ahí, haga la limpieza para poder homogenizar esos datos. (10pts) 
 
 ```{r}
-
+info_netflix_sin_año  |>
+  distinct(tipo,pais)
 ```
+
+```{r}
+info_netflix_limpio <- info_netflix_sin_año |>
+  mutate(tipo = case_when(tipo == "tv show" ~ "TV Show", tipo  %in% c("movie", "Movi") ~ "Movie", TRUE ~ tipo))
+```
+
+```{r}
+info_netflix_limpio_2 <- info_netflix_limpio |>
+  mutate(pais = case_when(pais == "united states" ~ "United States",pais == "india" ~ "India",pais == "canada" ~ "Canada" ,pais == "pakistan" ~ "Pakistan", TRUE ~ pais))
+```
+
 
 g. Para todas las columnas de tipo carácter, en donde haya NA, coloque “Sin información”. (4pts) 
 ```{r}
