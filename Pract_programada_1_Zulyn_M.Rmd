@@ -151,4 +151,15 @@ directores_shows <- info_netflix_mes |>
 
 l. Obtenga la lista de películas y shows de TV que se añadieron en marzo del año 2020. Cuántos fueron? (4pts) 
 
+```{r}
+pelis_mzo_2020 <- info_netflix_mes |>
+  filter(tipo == "Movie", anyo_agregada == 2020, mes_agregada == 3)
 
+shows_tv_mzo_2020 <- info_netflix_mes |>
+  filter(tipo == "TV Show", anyo_agregada == 2020, mes_agregada == 3)
+```
+
+```{r}
+num_pelis_mzo_2020 <- nrow(pelis_mzo_2020)
+num_shows_tv_mzo_2020 <- nrow(shows_tv_mzo_2020)
+```
