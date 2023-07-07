@@ -67,7 +67,8 @@ distinct()
 d. Elimine filas y columnas vacías. (2pts) 
 
 ```{r}
-
+infor_netflix_sin_vacios <- informacion_netflix_dedup |> 
+  remove_empty(which = c("rows", "cols"))
 ```
 
 e. Elimine la variable correspondiente al año de lanzamiento (release_year.) (2pts) 
