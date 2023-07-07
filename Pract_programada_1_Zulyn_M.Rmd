@@ -73,7 +73,9 @@ infor_netflix_sin_vacios <- informacion_netflix_dedup |>
 
 e. Elimine la variable correspondiente al año de lanzamiento (release_year.) (2pts) 
 ```{r}
-
+info_netflix_sin_año <- infor_netflix_sin_vacios|> 
+  select(-año_lanzamiento) |>
+  distinct()
 ```
 
 
@@ -106,7 +108,6 @@ j. Cuáles son los 10 directores con mayor cantidad de películas (sin contar sh
 
 ```
 
-1
 k. Cuáles son los 10 directores con mayor cantidad de shows de TV (sin contar películas) en Netflix? Ordénelos por orden descendente. (4pts) 
 ```{r}
 
