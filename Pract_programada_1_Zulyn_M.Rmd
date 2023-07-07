@@ -129,19 +129,26 @@ total_pelis_pais <- info_netflix_mes |>
 
 
 j. Cuáles son los 10 directores con mayor cantidad de películas (sin contar shows de TV) en Netflix? Ordénelos por orden descendente. (4pts)
-```{r}
 
+
+```{r}
+directores_pelis <- info_netflix_mes |>
+  filter(tipo == "Movie") |>
+  count(director) |>
+  arrange(desc(n)) |>
+  head(10)
 ```
 
 k. Cuáles son los 10 directores con mayor cantidad de shows de TV (sin contar películas) en Netflix? Ordénelos por orden descendente. (4pts) 
 ```{r}
-
+directores_shows <- info_netflix_mes |>
+  filter(tipo == "TV Show") |>
+  count(director) |>
+  arrange(desc(n)) |>
+  head(10)
 ```
 
 
 l. Obtenga la lista de películas y shows de TV que se añadieron en marzo del año 2020. Cuántos fueron? (4pts) 
 
-```{r}
-
-```
 
