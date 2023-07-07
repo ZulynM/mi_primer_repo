@@ -106,7 +106,18 @@ info_netflix_ren_na <- info_netflix_limpio_2 |>
 
 h. Añada a su conjunto de datos una nueva columna llamada anyo que indique el año en que el show o película fue añadido a Netflix. Añada también una columna llamada mes que indique el mes en que el show o película fue añadido a Netflix. (6pts) 
 ```{r}
+info_netflix_fecha <- info_netflix_ren_na |> 
+  mutate(fecha_agregada = dmy(fecha_agregada))
+```
 
+```{r}
+info_netflix_año <- info_netflix_fecha |> 
+  mutate(anyo_agregada = year(fecha_agregada))
+```
+
+```{r}
+info_netflix_mes <- info_netflix_año |> 
+  mutate(mes_agregada = month(fecha_agregada))
 ```
 
 
