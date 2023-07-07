@@ -99,7 +99,8 @@ info_netflix_limpio_2 <- info_netflix_limpio |>
 
 g. Para todas las columnas de tipo carácter, en donde haya NA, coloque “Sin información”. (4pts) 
 ```{r}
-
+info_netflix_ren_na <- info_netflix_limpio_2 |> 
+  mutate(across(where(is.character),  function(x) ifelse(is.na(x), "Sin información", x)))
 ```
 
 
