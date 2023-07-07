@@ -16,6 +16,7 @@ library(readxl)
 library(writexl) 
 library(tidyr)
 library(janitor) 
+library(lubridate)
 ```
 
 La presente práctica programada deberá resolverse de manera individual utilizando control de versiones (git), github y RStudio. 
@@ -31,12 +32,23 @@ Instrucciones:
 a. Cree un archivo Rmarkdown para resolver esta práctica programada. En el chunk de setup cargue las librerías que considere necesarias para resolver la práctica. Los datos para trabajar puede cargarlos con la función read_csv2 de readr directamente de la siguiente dirección: “https://raw.githubusercontent. com/isa229/programacion_analisis_datos_ii/main/netflix_info.csv” (1pto) 
 
 ```{r}
-Informacion_netflix <- read_csv2("https://raw.githubusercontent.com/isa229/programacion_analisis_datos_ii/main/netflix_info.csv")
+Informacion_netflix <-read_csv2("https://raw.githubusercontent.com/isa229/programacion_analisis_datos_ii/main/netflix_info.csv")
 ```
 
 b. Ajuste los nombres de las columnas para que estén en español. (2pts)
 ```{r}
-mutate()
+Informacion_netflix_renom  <- Informacion_netflix |>
+  rename("programa_id" = "show_id" ,
+         "tipo" = "type",
+         "titulo" = "title",
+         "director" = "director" ,
+         "pais" = "country" ,
+         "fecha_agregada" = "date_added",
+         "año_lanzamiento" = "release_year",
+         "clasificación" = "rating",
+         "duracion" = "duration",
+         "listado_en" = "listed_in"
+         )
 ```
 
 
