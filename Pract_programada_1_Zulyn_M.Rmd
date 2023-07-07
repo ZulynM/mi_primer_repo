@@ -54,9 +54,15 @@ Informacion_netflix_renom  <- Informacion_netflix |>
 
 c. Elimine filas duplicadas. (2pts) 
 ```{r}
-
+informacion_netflix_dedup <- Informacion_netflix_renom |>
+janitor::get_dupes() |> 
+  distinct()
 ```
 
+```{r}
+informacion_netflix_dedup <- Informacion_netflix_renom |>
+distinct()
+```
 
 d. Elimine filas y columnas vacías. (2pts) 
 
