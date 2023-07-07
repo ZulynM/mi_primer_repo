@@ -93,7 +93,7 @@ info_netflix_limpio <- info_netflix_sin_año |>
 
 ```{r}
 info_netflix_limpio_2 <- info_netflix_limpio |>
-  mutate(pais = case_when(pais == "united states" ~ "United States",pais == "india" ~ "India",pais == "canada" ~ "Canada" ,pais == "pakistan" ~ "Pakistan", TRUE ~ pais))
+  mutate(pais = case_when(pais %in% c("united states","United State") ~ "United States" ,pais == "india" ~ "India",pais == "canada" ~ "Canada" ,pais == "pakistan" ~ "Pakistan", TRUE ~ pais))
 ```
 
 
@@ -123,8 +123,9 @@ info_netflix_mes <- info_netflix_año |>
 
 Una vez que haya terminado la limpieza anterior, responda las siguientes preguntas: i. Cuántas películas y shows de TV hay por país? (4pts) 
 ```{r}
-
-```
+total_pelis_pais <- info_netflix_mes |>
+ count(pais,tipo, name = "Total")
+``` 
 
 
 j. Cuáles son los 10 directores con mayor cantidad de películas (sin contar shows de TV) en Netflix? Ordénelos por orden descendente. (4pts)
