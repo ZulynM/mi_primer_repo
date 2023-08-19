@@ -1,0 +1,19 @@
+---
+title: "practica_programada_3"
+author: "Zulyn_Mendez_Ovares"
+date: "2023-08-19"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(shiny)
+```
+
+```{r}
+library(shiny)
+ui <- fluidPage(
+  titlePanel(strong(h3("Planificador de eventos"))),
+```
+
+
