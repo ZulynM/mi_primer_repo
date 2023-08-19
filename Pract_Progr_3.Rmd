@@ -14,6 +14,11 @@ library(shiny)
 library(shiny)
 ui <- fluidPage(
   titlePanel(strong(h3("Planificador de eventos"))),
+   sidebarLayout(
+    sidebarPanel(
+      textInput(inputId = "nombre_evento", 
+                label = "Ingrese el nombre del evento:",
+                value = "Boda de María y Julio"),
 ```
 
 
