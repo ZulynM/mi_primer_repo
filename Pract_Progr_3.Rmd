@@ -1,0 +1,54 @@
+---
+title: "practica_programada_3"
+author: "Zulyn_Mendez_Ovares"
+date: "2023-08-19"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(shiny)
+```
+
+```{r}
+library(shiny)
+ui <- fluidPage(
+  titlePanel(strong(h3("Planificador de eventos"))),
+   sidebarLayout(
+    sidebarPanel(
+      textInput(inputId = "nombre_evento", 
+                label = "Ingrese el nombre del evento:",
+                value = "Boda de María y Julio"),
+       selectInput(inputId = "tema", 
+                  label = "Tema del Evento:", 
+                  choices = c("Fiesta de Cumpleaños", "Boda", "Conferencia", "Otro")),
+       numericInput(inputId = "invitados", 
+                   label = "Número de invitados", 
+                   value = 58, 
+                   min = 25, 
+                   max = 120),
+      selectInput(inputId = "provincia", 
+                  label = "Provincia:", 
+                  choices = c("Puntarenas", "Cartago", "Heredia", "Alajuela", "Limon", "San José", "Guanacaste"))
+    ),
+     mainPanel(
+      h3("¡Vamos a planificar su día especial!", align = "center", style = "color: blue"),
+      hr(),
+      p(strong(h4("Detalles del Evento:"))),
+      p("Nombre del evento: Boda de María y Julio"),hr(),p("Tema del evento: Fiesta de cumpleaños"),hr(),
+      p("Número de invitados y ubicación: El evento fiesta de cumpleaños tendra 58 invitados y será acabo en Puntarenas"),hr()
+    )
+  )
+)
+  
+
+server <- function(input, output, session) {
+  
+}
+
+shinyApp(ui, server)
+
+
+```
+
+
