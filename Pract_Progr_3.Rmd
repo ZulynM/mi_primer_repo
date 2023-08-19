@@ -19,6 +19,9 @@ ui <- fluidPage(
       textInput(inputId = "nombre_evento", 
                 label = "Ingrese el nombre del evento:",
                 value = "Boda de María y Julio"),
+       selectInput(inputId = "tema", 
+                  label = "Tema del Evento:", 
+                  choices = c("Fiesta de Cumpleaños", "Boda", "Conferencia", "Otro")),
 ```
 
 
