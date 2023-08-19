@@ -31,6 +31,24 @@ ui <- fluidPage(
                   label = "Provincia:", 
                   choices = c("Puntarenas", "Cartago", "Heredia", "Alajuela", "Limon", "San José", "Guanacaste"))
     ),
+     mainPanel(
+      h3("¡Vamos a planificar su día especial!", align = "center", style = "color: blue"),
+      hr(),
+      p(strong(h4("Detalles del Evento:"))),
+      p("Nombre del evento: Boda de María y Julio"),hr(),p("Tema del evento: Fiesta de cumpleaños"),hr(),
+      p("Número de invitados y ubicación: El evento fiesta de cumpleaños tendra 58 invitados y será acabo en Puntarenas"),hr()
+    )
+  )
+)
+  
+
+server <- function(input, output, session) {
+  
+}
+
+shinyApp(ui, server)
+
+
 ```
 
 
