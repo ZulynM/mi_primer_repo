@@ -22,6 +22,11 @@ ui <- fluidPage(
        selectInput(inputId = "tema", 
                   label = "Tema del Evento:", 
                   choices = c("Fiesta de Cumpleaños", "Boda", "Conferencia", "Otro")),
+       numericInput(inputId = "invitados", 
+                   label = "Número de invitados", 
+                   value = 58, 
+                   min = 25, 
+                   max = 120),
 ```
 
 
