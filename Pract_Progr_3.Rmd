@@ -27,6 +27,10 @@ ui <- fluidPage(
                    value = 58, 
                    min = 25, 
                    max = 120),
+      selectInput(inputId = "provincia", 
+                  label = "Provincia:", 
+                  choices = c("Puntarenas", "Cartago", "Heredia", "Alajuela", "Limon", "San José", "Guanacaste"))
+    ),
 ```
 
 
